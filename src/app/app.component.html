@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="input" (keyup)="onKey($event)" [ngClass]="{'validKey': firstWordIsAvailableKey}" placeholder="input" class="commandInput" >
+<div class="services">
+  <dcl-wrapper *ngFor="let service of validServices; let i = index" [ngClass]="{'highlight': i == activeRow}"  [type]="installedPreviewByCService(service)" ></dcl-wrapper>
+</div>

@@ -1,0 +1,57 @@
+$color_highlight: rgba(200,200,200,0.3);
+
+$color_strict: rgba(200,140,40,0.6);
+
+:host{
+
+    height: 100%;
+
+    .commandInput{
+        box-sizing: border-box;
+        margin: 10px 0;
+        padding: 0 1rem;
+        width: 100%;
+        font-size: 4rem;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(100,100,100,0.7);
+        color: #3f4b59;
+        outline: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    rgb(200,200,200);
+    }
+
+    .validKey{
+        background-color: $color_strict;
+    }
+
+    .services{
+        height: 100%;
+        padding-top: calc(4rem + 2*10px + 5px);
+        overflow-y: scroll;
+        box-sizing: border-box;
+        background-color: rgba(255,255,255,0.9);
+
+        dcl-wrapper{
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px;
+
+            &.highlight{
+                background-color: $color_highlight;
+            }
+
+        }
+    }
+
+    *{
+        font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+}
