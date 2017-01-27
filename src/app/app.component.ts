@@ -77,6 +77,34 @@ export class AppComponent {
   }
 
   public onKey(event: any) {
+
+
+    if (event.keyIdentifier === "Up") {
+      console.log("up");
+      console.log("event: ",event);
+      this.activeRow -= 1;
+
+      var pos = event.selectionStart;      
+      event.selectionStart = pos; event.selectionEnd = pos;
+      event.preventDefault();
+
+      console.log("activeRow", this.activeRow);
+      return false;
+    }
+    if (event.keyIdentifier === "Down") {
+      console.log("down");
+      console.log("event: ",event);
+      this.activeRow += 1;
+
+      var pos = event.selectionStart;      
+      event.selectionStart = pos; event.selectionEnd = pos;
+      event.preventDefault();
+        
+      console.log("activeRow", this.activeRow);
+      return false;
+    }
+
+
     if (this.firstWordIsAvailableKey) {
       this.serviceBasedOnKey = this.installedServices[this.availableKeys[this.firstWord]];
       var query = this.input.substr(this.input.indexOf(" ") + 1);
@@ -99,16 +127,7 @@ export class AppComponent {
       }
     }
 
-    if (event.keyIdentifier === "Up") {
-      console.log("up");
-      this.activeRow -= 1;
-    }
-    if (event.keyIdentifier === "Down") {
-      console.log("down");
-      this.activeRow += 1;
-    }
 
-    console.log("activeRow", this.activeRow);
 
 
 
